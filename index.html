@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+        .container{
+           padding: 10px;
+           width: 350px;
+           background-color: #efefef;
+           border-radius: 5px;
+        }
+        label{
+            font-size: 18px;
+        }
+      
+       input{
+        margin-top: 4px;
+        margin-bottom: 7px;
+        padding: 4px 3px;
+        font-size: 17px;
+       }
+       .error{
+        background: #fc7373;
+        color: white;
+        padding: 5px;
+       width: 150px;
+       }
+       ul{
+        text-decoration: none;
+        font-size: 18px;
+
+       }
+       .bg-dark{
+        background-color: #828282;
+       }
+       .bg-light{
+        background-color: #e1e1e1;
+       }
+
+    </style>
+
+</head>
+<body>
+    <section class="container">
+        <h2>Add Member</h2>
+        <div class="msg"></div>
+        <form id="form" action="">
+        <label for="">Name</label> <br>
+        <input type="text" name="" id="name" size="32" autocomplete="off"><br>
+        <label for="">Email</label> <br>
+        <input type="email" name="email" id="email" autocomplete="off" size="32"><br>
+        <input id="btn" type="submit" value="submit">
+        </form>
+       
+    </section>
+    <script src="./index.js"></script>
+</body>
+</html>
