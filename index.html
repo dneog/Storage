@@ -5,63 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body{
-            display: grid;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
-        }
-        .container{
-           padding: 10px;
-           width: 350px;
-           background-color: #efefef;
-           border-radius: 5px;
-        }
-        label{
-            font-size: 18px;
-        }
-      
-       input{
-        margin-top: 4px;
-        margin-bottom: 7px;
-        padding: 4px 3px;
-        font-size: 17px;
-       }
-       .error{
-        background: #fc7373;
-        color: white;
-        padding: 5px;
-       width: 150px;
-       }
-       ul{
-        text-decoration: none;
-        font-size: 18px;
-
-       }
-       .bg-dark{
-        background-color: #828282;
-       }
-       .bg-light{
-        background-color: #e1e1e1;
-       }
-
-    </style>
-
 </head>
 <body>
-    <section class="container">
-        <h2>Add Member</h2>
-        <div class="msg"></div>
-        <form id="form" action="">
-        <label for="">Name</label> <br>
-        <input type="text" name="" id="name" size="32" autocomplete="off"><br>
-        <label for="">Email</label> <br>
-        <input type="email" name="email" id="email" autocomplete="off" size="32"><br>
-        <input id="btn" type="submit" value="submit">
-        </form>
-       
-    </section>
-    <script src="./index.js"></script>
+    <form id="form" action="">
+    <label for="">Name</label>
+    <input type="text" name="userName" id="name" autocomplete="off">
+    <label for="">Email-ID</label>
+    <input type="email" name="emailID" id="name" autocomplete="off">
+    <label for="">Phone Number</label>
+    <input type="text" name="phone" id="name" autocomplete="off">
+    <input type="submit" name="submit" id="submit">
+    </form>
+    <ul id="list"></ul>
+
+    <script>
+        var form=document.getElementById('form');
+var list=document.getElementById('list');
+form.addEventListener('submit', function(event){
+    event.preventDefault();
+    var name=event.target.userName.value;
+    var email= event.target.emailID.value;
+    var phoneNumber= event.target.phone.value;
+
+    var obj={
+        name,
+        email,
+        phoneNumber,
+    }
+
+    localStorage.setItem('userDetails', JSON.stringify(obj));
+
+    var li=document.createElement('li');
+    var text=document.createTextNode(obj.name+' - '+obj.email+' - '+obj.phoneNumber);
+    li.appendChild(text);
+    list.appendChild(li);
+    form.reset();
+})
+    </script>
+   
 </body>
 </html>
